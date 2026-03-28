@@ -1,309 +1,456 @@
-# C++ Practice Questions
+# C++ Question Anthology
+
+> *From zero to boss — one question at a time.*
 
 ---
 
-## 1. Setup & Hello World
+## Chapter 1 — Variables & Data Types
+*"Name your data before it names you."*
 
-1. What does `#include <iostream>` do?
-2. What is the role of `main()` in a C++ program?
-3. What does `std::cout` do, and what is `std::`?
-4. What's the difference between `using namespace std;` and writing `std::` explicitly?
-5. Write a program that prints your name, age, and favourite language on separate lines.
-6. Without `using namespace std;`, write Hello World using full `std::` prefixes.
+**Q1.** Store your name, age, height (in cm), and whether you like coding (`true`/`false`) in correctly-typed variables. Print all four on separate lines with labels.
 
----
+```
+Expected output:
+Name   : ...
+Age    : ...
+Height : ... cm
+Coder  : ...
+```
 
-## 2. Drawing a Shape
+**Q2.** Store the number `1000000000` (one billion) in an `int`, then in a `long long`. Multiply both by 3 and print the results. Explain the difference you see using a comment in your code.
 
-1. What's the difference between `\n` and `endl`?
-2. How do you print multiple lines using `cout`?
-3. Print a right-angled triangle of height 5 using `*`.
-4. Print a hollow rectangle of width 7, height 4 using `*` for borders and spaces inside.
-5. Print this pyramid using only `cout` (no loops):
-   ```
-      *
-     ***
-    *****
-   *******
-   ```
+```
+Expected output:
+int result : -1294967296   (overflow!)
+ll result  : 3000000000   (correct)
+```
 
----
+**Q3.** Declare a `float` and a `double`, both storing the value `3.14159265358979`. Print both with 15 decimal places using `setprecision(15)`. Which one is more accurate?
 
-## 3. Variables
-
-1. What three things does declaring a variable define?
-2. What is the difference between declaring and initializing a variable?
-3. What happens if you use a variable before initializing it?
-4. List four naming rules for variables in C++.
-5. Declare variables for name, age, GPA, and student status. Print them in a sentence.
-6. Swap two integer variables without using a third variable.
+```
+Expected output:
+float  : 3.141592741012573
+double : 3.141592653589790
+```
 
 ---
 
-## 4. Data Types
+## Chapter 2 — User Input & Working With Numbers
+*"The program listens. Then it calculates."*
 
-1. List the six primitive data types in C++ and their typical sizes in bytes.
-2. What's the difference between `float` and `double`?
-3. What is integer overflow? Give an example.
-4. How is `bool` represented internally in memory?
-5. Declare one variable of each primitive type and print the size of each using `sizeof()`.
-6. Demonstrate integer overflow using a `short int` at its maximum value (32767). Add 1 and print the result.
+**Q4.** Ask the user for two integers. Print their sum, difference, product, quotient, and remainder. Handle the case where the second number is 0 — print a warning instead of crashing.
 
----
+```
+Expected output:
+Enter two numbers: 17 5
+Sum        : 22
+Difference : 12
+Product    : 85
+Quotient   : 3
+Remainder  : 2
+```
 
-## 5. Working With Strings
+**Q5.** Ask the user for a temperature in Celsius. Convert it to Fahrenheit (`F = C * 9/5 + 32`) and Kelvin (`K = C + 273.15`). Print all three rounded to 2 decimal places.
 
-1. What header do you need to use the `string` type?
-2. How do you find the length of a string?
-3. How do you access the character at index 3 of a string `word`?
-4. What does `.substr(start, length)` do? Give an example.
-5. Ask the user for first and last name separately. Print: "Hello, [First] [Last]! Your name has X characters."
-6. Given "Hello, World!" — reverse it, print characters at even indices, and count the vowels.
-7. Check if a string is a palindrome.
+```
+Expected output:
+Enter temperature (C): 37
+Celsius    : 37.00
+Fahrenheit : 98.60
+Kelvin     : 310.15
+```
 
----
+**Q6.** Ask the user for the radius of a circle. Compute and print the area and circumference. Use your own approximation of pi (`3.14159`) stored in a `const double`.
 
-## 6. Working With Numbers
-
-1. What is the result of `7 / 2` in C++? How do you get `3.5`?
-2. What does `%` do? Give two real-world use cases.
-3. What header is needed for `pow()`, `sqrt()`, and `abs()`?
-4. What's the difference between prefix (`++i`) and postfix (`i++`) increment?
-5. Take an integer and print: whether it's even/odd, its square root, and its absolute value.
-6. Compute 2^10 without `pow()`, then verify using `pow()`.
-
----
-
-## 7. Getting User Input
-
-1. What operator does `cin` use to read input?
-2. What's the difference between `cin >> name` and `getline(cin, name)`?
-3. What happens to `cin` when the user enters the wrong data type?
-4. Why do you sometimes need `cin.ignore()` before `getline()`?
-5. Ask the user for name (with spaces), age, and city. Print a greeting using all three.
-6. Ask the user to enter 5 numbers. Print their sum and average.
+```
+Expected output:
+Enter radius: 7
+Area         : 153.94
+Circumference: 43.98
+```
 
 ---
 
-## 8. Building a Calculator
+## Chapter 3 — If Statements & Switch
+*"The fork in the road is where programs come alive."*
 
-1. What control flow structure would you use to branch on an operator (+, -, *, /)?
-2. Why must division by zero be explicitly handled?
-3. What data type should store the operands, and why?
-4. Build a calculator: takes two numbers and an operator, handles division by zero, prints the result.
-5. Extend it: add `%` and `^` support. Keep running until the user types `q`.
+**Q7.** Ask the user for a year. Using `if/else`, determine if it is a leap year. A year is a leap year if it is divisible by 4, except century years which must be divisible by 400.
 
----
+```
+Expected output:
+Enter year: 2000
+2000 is a leap year.
 
-## 9. Building a Mad Libs
+Enter year: 1900
+1900 is NOT a leap year.
+```
 
-1. How do you insert a variable into the middle of a `cout` statement?
-2. Why is `getline()` better than `cin >>` for Mad Libs inputs?
-3. Build a Mad Libs with at least 6 blanks (noun, verb, adjective, etc.) and print the story.
-4. Wrap the game in a loop that continues if the user types `y`.
+**Q8.** Ask the user for a single digit (0–9). Using a `switch` statement, print its English word equivalent. If the input is not 0–9, print `"Invalid digit"`.
 
----
+```
+Expected output:
+Enter digit: 7
+Seven
+```
 
-## 10. Arrays
+**Q9.** Ask the user for three side lengths. Using `if/else` determine if they form: an equilateral triangle (all equal), isosceles (two equal), scalene (none equal), or not a triangle at all (triangle inequality rule).
 
-1. What is an array? How does it differ from a regular variable?
-2. What is the index of the first element?
-3. What happens when you access an out-of-bounds index?
-4. How do you find the number of elements using `sizeof()`?
-5. Declare an array of 7 integers. Print all elements, their sum, average, max, and min.
-6. Reverse an array of 10 integers in-place (no second array).
-7. Implement linear search: return the index of a target, or -1 if not found.
+```
+Expected output:
+Enter sides: 5 5 8
+Isosceles triangle.
 
----
+Enter sides: 1 2 10
+Not a valid triangle.
+```
 
-## 11. Functions
+**Q10.** Write a simple calculator. Ask the user for two numbers and an operator (`+`, `-`, `*`, `/`). Use a `switch` statement to perform the correct operation. Handle division by zero gracefully.
 
-1. What are the four main benefits of using functions?
-2. What's the difference between a function declaration and a function definition?
-3. What are parameters vs arguments?
-4. What happens if you call a function before defining it without a prototype?
-5. Write `greet(string name)` that prints "Hello, [name]! Welcome to C++." Call it 3 times.
-6. Write `isPrime(int n)` returning true/false. Test for: 1, 2, 13, 25, 97.
+```
+Expected output:
+Enter: 15 / 0
+Error: Division by zero.
 
----
-
-## 12. Return Statement
-
-1. What is the purpose of the `return` statement?
-2. What does `void` mean as a return type?
-3. Can a function have multiple `return` statements?
-4. What's the difference between returning a value and printing it inside a function?
-5. Write `max(int a, int b, int c)` returning the largest of three numbers.
-6. Write `factorial(int n)` using a loop and return. Test for 0, 1, 5, 10.
+Enter: 8 * 9
+Result: 72
+```
 
 ---
 
-## 13. If Statements
+## Chapter 4 — For & While Loops
+*"Repetition is not monotony — it is power."*
 
-1. What values are "truthy" and "falsy" in C++?
-2. What is short-circuit evaluation?
-3. What is a compound condition? Give an example using `&&` and `||`.
-4. Write a program that prints "Positive", "Negative", or "Zero" for a user-entered number.
-5. Determine whether a year is a leap year (divisible by 4, except centuries unless also divisible by 400).
+**Q11.** Print the multiplication table for a number entered by the user, from 1 to 12, neatly formatted.
 
----
+```
+Expected output:
+Enter number: 7
+7  x  1  =   7
+7  x  2  =  14
+...
+7  x 12  =  84
+```
 
-## 14. If Statements (con't)
+**Q12.** Using a `while` loop, keep asking the user to enter a positive number. Compute and print its factorial. Stop when the user enters 0. Count how many factorials were computed.
 
-1. What is an `else if` chain?
-2. What is the ternary operator? Write its syntax.
-3. What is the dangling else problem?
-4. Write a grade calculator: A (≥90), B (≥80), C (≥70), D (≥60), F (<60).
-5. Using only the ternary operator, print "Even"/"Odd" and "Pass"/"Fail" (score ≥50).
-6. FizzBuzz 1–100: multiples of 3 → "Fizz", 5 → "Buzz", both → "FizzBuzz".
+```
+Expected output:
+Enter number (0 to quit): 5
+5! = 120
+Enter number (0 to quit): 3
+3! = 6
+Enter number (0 to quit): 0
+Computed 2 factorial(s).
+```
 
----
+**Q13.** Print a right-angled triangle of stars. Ask the user for the height `n`. Row `i` should have `i` stars. Use a nested for loop.
 
-## 15. Building a Better Calculator
+```
+Expected output:
+Enter height: 5
+*
+**
+***
+****
+*****
+```
 
-1. Why use separate functions for each operation instead of one big `main()`?
-2. What is the benefit of separating input logic, computation logic, and output logic?
-3. Refactor your basic calculator so each operation (+, -, *, /) is its own function. `main()` handles only I/O.
-4. Build a calculator that keeps a running total. Type `r` to reset, `q` to quit. Print operation history at the end.
+**Q14.** Print all prime numbers between 1 and `n` (user-provided) using nested loops. For each number, check if any integer from 2 to its square root divides it evenly.
 
----
-
-## 16. Switch Statements
-
-1. What data types can be used in a `switch` expression?
-2. What is fall-through, and how does `break` prevent it?
-3. When is intentional fall-through useful?
-4. Is the `default` case required?
-5. Rewrite a grade printer (A/B/C/D/F) using `switch` (map with `score / 10`).
-6. Build a menu-driven program with switch: 1) Say Hello 2) Exit.
-
----
-
-## 17. While Loops
-
-1. What is the structure of a `while` loop? When does it stop?
-2. What is the difference between `while` and `do-while`?
-3. What happens if the condition is false from the start?
-4. Print a countdown from 10 to 0 using a while loop. Print "Blast off!" at the end.
-5. Print the Fibonacci sequence up to the first value exceeding 1000.
-6. Keep asking the user for a number between 1 and 100 until they enter a valid one.
+```
+Expected output:
+Enter n: 30
+2 3 5 7 11 13 17 19 23 29
+```
 
 ---
 
-## 18. Building a Guessing Game
+## Chapter 5 — Functions & Return Statements
+*"Write once. Call forever."*
 
-1. How do you generate a random number in C++? What headers do you need?
-2. Why do you seed `srand()` with `time(0)`?
-3. How do you constrain a random number to [1, N]?
-4. Build the classic guessing game: computer picks 1–100, user guesses, prints "Too high"/"Too low"/"Correct!" and attempt count.
-5. Add difficulty levels: Easy (1–50, 10 tries), Medium (1–100, 7 tries), Hard (1–200, 5 tries).
+**Q15.** Write four separate functions — `add`, `subtract`, `multiply`, `divide` — each taking two `double`s and returning a `double`. Build a menu-driven calculator that calls the right function based on user choice.
 
----
+```
+Expected output:
+1. Add   2. Subtract   3. Multiply   4. Divide
+Choice: 3
+Enter two numbers: 6 7
+Result: 42.00
+```
 
-## 19. For Loops
+**Q16.** Write a function `isPrime(int n)` that returns `true` if `n` is prime, `false` otherwise. Use it to print all primes up to 100, five per line.
 
-1. What are the three components of a `for` loop header?
-2. What does `break` do? What does `continue` do?
-3. What is an off-by-one error? Give an example and fix.
-4. Print the multiplication table (×1 to ×12) for any user-entered number.
-5. Find all prime numbers between 1 and 200 using nested for loops.
-6. Given an array, find the second largest element.
+```
+Expected output:
+ 2   3   5   7  11
+13  17  19  23  29
+...
+```
 
----
+**Q17.** Write a function `reverse(int n)` that returns the digit-reversal of a number (e.g. `1234 → 4321`). Then write `isPalindrome(int n)` that uses `reverse()` to check if a number reads the same forwards and backwards.
 
-## 20. Exponent Function
+```
+Expected output:
+Enter number: 12321
+Reversed    : 12321
+Palindrome  : YES
 
-1. How can exponentiation be implemented using a loop?
-2. What edge cases must an exponent function handle?
-3. What is exponentiation by squaring, and why is it faster?
-4. Write `myPow(double base, int exp)` using a loop. Handle negative exponents.
-5. Implement exponentiation by squaring. Verify `myPow(2, 30)` equals `pow(2, 30)`.
+Enter number: 1234
+Reversed    : 4321
+Palindrome  : NO
+```
 
----
+**Q18.** Write a recursive function `fibonacci(int n)` that returns the nth Fibonacci number. Print the first 15 Fibonacci numbers using a for loop that calls this function.
 
-## 21. 2D Arrays & Nested Loops
-
-1. How do you declare a 2D array in C++?
-2. How are 2D arrays stored in memory?
-3. How do you access row 2, column 3 of array `grid`?
-4. How do you pass a 2D array to a function?
-5. Declare a 3×3 matrix, fill with 1–9, print in grid format.
-6. Write a function that transposes an N×N matrix in-place.
-7. Implement multiplication of two 3×3 matrices. Verify using the identity matrix.
-
----
-
-## 22. Comments
-
-1. What are the two types of comments in C++?
-2. What's the difference between a comment explaining *what* code does vs *why*?
-3. What makes a comment bad? Give two examples.
-4. Take any 20-line program you've written. Add a file-level comment, inline comments for non-obvious lines, and a TODO.
-5. Write a Doxygen-style comment block for `isPrime(int n)` with `@param`, `@return`, and `@example`.
+```
+Expected output:
+1 1 2 3 5 8 13 21 34 55 89 144 233 377 610
+```
 
 ---
 
-## 23. Pointers
+## Chapter 6 — Arrays
+*"Many values. One name. Total control."*
 
-1. What does a pointer store?
-2. What's the difference between `&` (address-of) and `*` (dereference)?
-3. What is a null pointer? How do you declare one safely in modern C++?
-4. What is pointer arithmetic?
-5. Declare `int x = 42`. Print: the value of x, its address, and the value via pointer.
-6. Write `swap(int* a, int* b)` that swaps two values using pointers. Verify it modifies originals.
-7. Traverse an integer array using only pointer arithmetic (no `arr[i]`). Print each element and its address.
+**Q19.** Ask the user to enter 10 integers into an array. Without using any built-in sort or min/max functions, find and print the maximum, minimum, sum, and average.
 
----
+```
+Expected output:
+Enter 10 numbers: 4 7 2 9 1 5 8 3 6 10
+Max     : 10
+Min     : 1
+Sum     : 55
+Average : 5.50
+```
 
-## 24. Classes & Objects
+**Q20.** Store 8 numbers in an array. Write your own bubble sort to sort them in ascending order. Print the array before and after sorting.
 
-1. What's the difference between a class and a struct?
-2. What are member variables and member functions?
-3. What are the three access specifiers and what does each allow?
-4. What is encapsulation?
-5. Create a `Student` class with private `name` and `grade`, and public methods to set and print them. Create two objects and test.
-6. Create a `BankAccount` class with `deposit()`, `withdraw()` (no overdraft), and `getBalance()`. Test with a series of transactions.
+```
+Expected output:
+Before: 64 34 25 12 22 11 90 45
+After : 11 12 22 25 34 45 64 90
+```
 
----
+**Q21.** Ask the user for an array of `n` integers and a target number. Implement linear search — print the index if found, or `"Not found"` if not. Then count how many times the target appears.
 
-## 25. Constructor Functions
-
-1. When is a constructor automatically called?
-2. What is a default constructor?
-3. What is a constructor initializer list? How does it differ from assignment in the body?
-4. Can a class have multiple constructors? What is this called?
-5. Create a `Rectangle` class with a default constructor (1×1) and a parameterized one. Add `area()`. Test both.
-6. Create a `Counter` class that starts at a given value (default 0), with `increment()`, `decrement()`, `reset()`, `getValue()`. Print a message in the destructor.
-
----
-
-## 26. Object Functions
-
-1. What is the `this` pointer? When do you need it explicitly?
-2. What does `const` after a member function signature mean?
-3. What's the difference between a mutator and an accessor?
-4. Create a `Circle` class with `area()`, `circumference()`, `isLargerThan(Circle other)`, and `scale(double factor)`.
-5. Create a `StringProcessor` class with methods: `toUpperCase()`, `toLowerCase()`, `reverse()`, `wordCount()`, `isPalindrome()`. None should modify the original string.
+```
+Expected output:
+Array  : 3 7 2 7 9 7 4
+Target : 7
+First found at index: 1
+Appears 3 time(s).
+```
 
 ---
 
-## 27. Getters & Setters
+## Chapter 7 — Strings
+*"Characters in sequence. Meaning in context."*
 
-1. Why not just make member variables public?
-2. How can setters validate data before storing? Give a real example.
-3. Should a getter modify the object? What keyword enforces this?
-4. Create a `Temperature` class with a private Celsius double. Add `getCelsius()`, `getFahrenheit()`, `getKelvin()`, and a setter that rejects values below −273.15°C.
-5. Create a `Password` class where the setter validates ≥8 chars, at least one digit and one uppercase letter. The getter returns the password masked (e.g., `"pass"` → `"****"`).
+**Q22.** Ask the user for a sentence. Count the number of vowels, consonants, spaces, and digits in it. Print each count on its own line.
+
+```
+Expected output:
+Enter sentence: Hello World 123
+Vowels     : 3
+Consonants : 7
+Spaces     : 2
+Digits     : 3
+```
+
+**Q23.** Ask the user for a word. Check if it is a palindrome by comparing characters from both ends moving inward. Do not use any built-in reverse function.
+
+```
+Expected output:
+Enter word: racecar
+racecar is a palindrome.
+
+Enter word: hello
+hello is NOT a palindrome.
+```
+
+**Q24.** Ask the user for a string. Build and print a new string that contains only the characters at even indices (0, 2, 4...). Then print only the characters at odd indices. Concatenate both and print the final combined string.
+
+```
+Expected output:
+Input    : Harshith
+Even idx : Hrsh
+Odd idx  : ait
+Combined : Hrshaiti
+```
 
 ---
 
-## 28. Inheritance
+## Chapter 8 — 2D Arrays & Nested Loops
+*"The grid is where real programs live."*
 
-1. What problem does inheritance solve?
-2. What's the difference between `public`, `protected`, and `private` inheritance?
-3. What is method overriding? How does it differ from overloading?
-4. What is a virtual function, and why is it needed for polymorphism?
-5. Create a base class `Animal` with `speak()`. Derive `Dog` and `Cat` with their own sounds. Store them in an array of `Animal*` and call `speak()` on each.
-6. Create a `Shape` base class with virtual `area()`. Derive `Circle`, `Rectangle`, and `Triangle`. Store in a `vector<Shape*>` and print the area of each.
+**Q25.** Fill a 5×5 2D array with values 1–25 row by row. Print it as a neatly formatted grid. Then print the sum of each row and each column separately.
+
+```
+Expected output:
+ 1  2  3  4  5   | Row sum: 15
+ 6  7  8  9 10   | Row sum: 40
+11 12 13 14 15   | Row sum: 65
+16 17 18 19 20   | Row sum: 90
+21 22 23 24 25   | Row sum: 115
+Col sums: 55 60 65 70 75
+```
+
+**Q26.** Create a 4×4 matrix using user input. Write a function `transpose(int m[][4], int n)` that swaps rows and columns and prints the transposed matrix.
+
+```
+Expected output:
+Original:          Transposed:
+1  2  3  4         1  5  9  13
+5  6  7  8         2  6  10 14
+9  10 11 12        3  7  11 15
+13 14 15 16        4  8  12 16
+```
+
+**Q27.** Create a 5×5 2D array filled with values of your choice (1–9). Without using any diagonal-specific shortcut, find and print the sum of the main diagonal (top-left to bottom-right) and the anti-diagonal (top-right to bottom-left).
+
+```
+Expected output:
+Grid:
+3 1 4 1 5
+9 2 6 5 3
+5 8 9 7 9
+3 2 3 8 4
+6 2 6 4 3
+Main diagonal sum  : 25
+Anti diagonal sum  : 28
+```
+
+---
+
+## Chapter 9 — Exponents & Math Functions
+*"When arithmetic alone is not enough."*
+
+**Q28.** Write your own power function `myPow(long long base, int exp)` without using `pow()`. Handle negative exponents by returning 0 (integer domain only). Test it with at least 5 cases including edge cases.
+
+```
+Expected output:
+myPow(2, 10)   = 1024
+myPow(-3, 3)   = -27
+myPow(5, 0)    = 1
+myPow(7, 1)    = 7
+myPow(2, -1)   = 0
+```
+
+**Q29.** Ask the user for a number `n`. Print a table of `n`, `n²`, `n³`, and the integer square root of `n` (floor) for all values from 1 to `n`. Right-align all columns.
+
+```
+Expected output:
+n    n^2    n^3   sqrt(n)
+1      1      1        1
+2      4      8        1
+3      9     27        1
+4     16     64        2
+5     25    125        2
+```
+
+**Q30.** Compute compound interest. Ask for principal `P`, annual rate `R` (as a percentage), number of times compounded per year `n`, and years `t`. Use the formula `A = P * (1 + R/100n)^(n*t)` using your own `myPow` function for integer exponents.
+
+```
+Expected output:
+Principal  : 10000
+Rate (%)   : 8
+Times/year : 4
+Years      : 5
+Final amount: 14859.47
+```
+
+---
+
+## BOSS LEVEL — The Student Olympiad Tracker
+*"Every concept. One program. No hints."*
+
+> **Style:** LeetCode + Story-based + Plain practice — all three.
+
+You are building an Olympiad result tracker. The program handles `n` students across 4 subjects. Your program must run through 7 phases. All scoring logic must live in **separate functions**.
+
+### Constraints
+- `2 ≤ n ≤ 6` students
+- 4 subjects: Math, Physics, Chemistry, CS
+- Scores: 0–100 per subject
+
+---
+
+### Phase 1 — Input
+Ask the user for `n`. Then ask for each student's name and their 4 subject scores. Store names in a `string` array and scores in a 2D `int` array of size `n×4`.
+
+---
+
+### Phase 2 — Grade Assignment
+Write a function `getGrade(int score)` that uses a `switch` or `if/else` chain to return a `char` grade:
+- 90+ → `'A'`
+- 80–89 → `'B'`
+- 70–79 → `'C'`
+- 60–69 → `'D'`
+- below 60 → `'F'`
+
+Apply it to every score in the 2D array and store results in a 2D `char` array of the same size.
+
+---
+
+### Phase 3 — Per-Student Report
+Write a function `studentAverage(int scores[], int n)` that returns the average score of a student across all subjects. For each student, print their name, all 4 scores with grades, and their average.
+
+```
+Expected format:
+Alice | Math:95(A)  Phy:88(B)  Chem:76(C)  CS:99(A)  | Avg: 89.50
+```
+
+---
+
+### Phase 4 — Leaderboard
+Sort students by their overall average in descending order using bubble sort on their averages array. Print the ranked leaderboard with rank number, name, and average.
+
+```
+Expected format:
+Rank 1: Alice | 89.50
+Rank 2: Bob   | 85.25
+...
+```
+
+---
+
+### Phase 5 — Subject Analysis
+For each of the 4 subjects, find and print the highest score, lowest score, and subject average. Also print the name of the student who topped that subject.
+
+```
+Expected format:
+Math    | High: 95 (Alice) | Low: 52 (Bob) | Avg: 74.33
+Physics | High: 91 (Carol) | Low: 48 (Dan) | Avg: 71.00
+...
+```
+
+---
+
+### Phase 6 — Power Score & Medal String
+Compute each student's Power Score using your custom `myPow` function:
+
+```
+Power = (number of A grades)^2 + (number of B grades)
+```
+
+Build and print a **medal string** for each student — concatenate their grade chars across all subjects (e.g. `"ABCA"`). Print a Power Score leaderboard.
+
+```
+Expected format:
+Alice | Medals: ABCA | Power Score: 5
+Bob   | Medals: BBAB | Power Score: 4
+...
+```
+
+---
+
+### Phase 7 — Oracle Interrogation
+Print the overall topper's name. Then run a guessing game using a `while` loop: ask the user to guess this topper's average (rounded to nearest integer). Give `"Too low"` / `"Too high"` hints. Count attempts. When correct, print the final verdict:
+
+```
+"After [ATTEMPTS] attempt(s), the seeker discovered that [NAME]
+reigned supreme with an average of [AVG], earning [MEDAL_STRING]
+and a Power Score of [POWER] in the [N]-student olympiad."
+```
 
 ---
