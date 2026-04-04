@@ -1,153 +1,67 @@
-# C++ Question Anthology
+# ⚔️ The Python Chronicles — A Questbook for the Brave
 
-> *From zero to boss — one question at a time.*
-
----
-
-## Chapter 1 — Variables & Data Types
-*"Name your data before it names you."*
-
-**Q1.** Store your name, age, height (in cm), and whether you like coding (`true`/`false`) in correctly-typed variables. Print all four on separate lines with labels.
-
-```
-Expected output:
-Name   : ...
-Age    : ...
-Height : ... cm
-Coder  : ...
-```
-
-**Q2.** Store the number `1000000000` (one billion) in an `int`, then in a `long long`. Multiply both by 3 and print the results. Explain the difference you see using a comment in your code.
-
-```
-Expected output:
-int result : -1294967296   (overflow!)
-ll result  : 3000000000   (correct)
-```
-
-**Q3.** Declare a `float` and a `double`, both storing the value `3.14159265358979`. Print both with 15 decimal places using `setprecision(15)`. Which one is more accurate?
-
-```
-Expected output:
-float  : 3.141592741012573
-double : 3.141592653589790
-```
+> *"Every master was once a beginner who refused to quit.  
+> Every line of code — a brushstroke on the canvas of tomorrow."*
 
 ---
 
-## Chapter 2 — User Input & Working With Numbers
-*"The program listens. Then it calculates."*
+## 📜 Preface
 
-**Q4.** Ask the user for two integers. Print their sum, difference, product, quotient, and remainder. Handle the case where the second number is 0 — print a warning instead of crashing.
+This is not just a problem set. This is a **rite of passage**.  
+Each problem is a door. Each solution — a key you forge yourself.  
+Progress through four tiers, and face the **Boss Level** when you're ready.
 
-```
-Expected output:
-Enter two numbers: 17 5
-Sum        : 22
-Difference : 12
-Product    : 85
-Quotient   : 3
-Remainder  : 2
-```
-
-**Q5.** Ask the user for a temperature in Celsius. Convert it to Fahrenheit (`F = C * 9/5 + 32`) and Kelvin (`K = C + 273.15`). Print all three rounded to 2 decimal places.
-
-```
-Expected output:
-Enter temperature (C): 37
-Celsius    : 37.00
-Fahrenheit : 98.60
-Kelvin     : 310.15
-```
-
-**Q6.** Ask the user for the radius of a circle. Compute and print the area and circumference. Use your own approximation of pi (`3.14159`) stored in a `const double`.
-
-```
-Expected output:
-Enter radius: 7
-Area         : 153.94
-Circumference: 43.98
-```
+**Languages allowed:** Python 3.x only  
+**Judgment:** Standard I/O (stdin/stdout)  
+**Format:** Inspired by Codeforces — Input → Output → Glory
 
 ---
 
-## Chapter 3 — If Statements & Switch
-*"The fork in the road is where programs come alive."*
-
-**Q7.** Ask the user for a year. Using `if/else`, determine if it is a leap year. A year is a leap year if it is divisible by 4, except century years which must be divisible by 400.
-
-```
-Expected output:
-Enter year: 2000
-2000 is a leap year.
-
-Enter year: 1900
-1900 is NOT a leap year.
-```
-
-**Q8.** Ask the user for a single digit (0–9). Using a `switch` statement, print its English word equivalent. If the input is not 0–9, print `"Invalid digit"`.
-
-```
-Expected output:
-Enter digit: 7
-Seven
-```
-
-**Q9.** Ask the user for three side lengths. Using `if/else` determine if they form: an equilateral triangle (all equal), isosceles (two equal), scalene (none equal), or not a triangle at all (triangle inequality rule).
-
-```
-Expected output:
-Enter sides: 5 5 8
-Isosceles triangle.
-
-Enter sides: 1 2 10
-Not a valid triangle.
-```
-
-**Q10.** Write a simple calculator. Ask the user for two numbers and an operator (`+`, `-`, `*`, `/`). Use a `switch` statement to perform the correct operation. Handle division by zero gracefully.
-
-```
-Expected output:
-Enter: 15 / 0
-Error: Division by zero.
-
-Enter: 8 * 9
-Result: 72
-```
+<br>
 
 ---
 
-## Chapter 4 — For & While Loops
-*"Repetition is not monotony — it is power."*
+# 🟤 TIER I — BRONZE: Where the Cursor Blinks First
 
-**Q11.** Print the multiplication table for a number entered by the user, from 1 to 12, neatly formatted.
+> *"In the beginning, there was nothing —  
+> and then you typed `print`, and the world began."*
 
+---
+
+## Problem 1 — Stairway to Stars
+
+| | |
+|---|---|
+| **Difficulty** | ⭐ `800` |
+| **Time Limit** | 1 second |
+| **Memory Limit** | 256 MB |
+| **Topics** | `Output` · `Drawing a Shape` · `Loops` |
+
+### Problem Statement
+
+A young astronomer is building a **staircase to the sky**, one row of stars at a time.  
+She needs your help to construct a **right-angled triangle** of `*` characters with exactly `n` rows, where the `i`-th row contains exactly `i` stars.
+
+Can you light up her path?
+
+### Input
+
+A single integer `n` — the number of rows in the staircase.
+
+$$1 \leq n \leq 50$$
+
+### Output
+
+Print `n` lines. The `i`-th line (1-indexed) must contain exactly `i` asterisk (`*`) characters.
+
+### Examples
+
+**Input:**
 ```
-Expected output:
-Enter number: 7
-7  x  1  =   7
-7  x  2  =  14
-...
-7  x 12  =  84
+5
 ```
-
-**Q12.** Using a `while` loop, keep asking the user to enter a positive number. Compute and print its factorial. Stop when the user enters 0. Count how many factorials were computed.
-
+**Output:**
 ```
-Expected output:
-Enter number (0 to quit): 5
-5! = 120
-Enter number (0 to quit): 3
-3! = 6
-Enter number (0 to quit): 0
-Computed 2 factorial(s).
-```
-
-**Q13.** Print a right-angled triangle of stars. Ask the user for the height `n`. Row `i` should have `i` stars. Use a nested for loop.
-
-```
-Expected output:
-Enter height: 5
 *
 **
 ***
@@ -155,302 +69,1087 @@ Enter height: 5
 *****
 ```
 
-**Q14.** Print all prime numbers between 1 and `n` (user-provided) using nested loops. For each number, check if any integer from 2 to its square root divides it evenly.
+---
+
+**Input:**
+```
+1
+```
+**Output:**
+```
+*
+```
+
+### Notes
+
+Think of building the staircase **one step at a time**. A simple loop from `1` to `n` is your best friend here. Notice how the number of stars on each row matches the row number.
+
+---
+<br>
+
+## Problem 2 — The Name Echo
+
+| | |
+|---|---|
+| **Difficulty** | ⭐ `850` |
+| **Time Limit** | 1 second |
+| **Memory Limit** | 256 MB |
+| **Topics** | `Variables` · `Strings` · `Data Types` |
+
+### Problem Statement
+
+> *"A name is the first poem a parent writes."*
+
+The Oracle has a guest. She knows their **name** and their **birth year**.  
+The Oracle always speaks in the year **2025**.
+
+Given a person's full name and birth year, the Oracle must greet them with:
+- Their name
+- Their current age (as of 2025)
+- The number of characters in their name *(spaces included)*
+
+Format exactly as shown in the example.
+
+### Input
+
+Two lines:
+- Line 1: A non-empty string `name` (may contain spaces)
+- Line 2: An integer `birth_year`
+
+$$1900 \leq \text{birth\_year} \leq 2024$$
+
+### Output
+
+A single formatted line:
 
 ```
-Expected output:
-Enter n: 30
-2 3 5 7 11 13 17 19 23 29
+Hello, [name]! You are [age] years old. Your name has [len] characters.
+```
+
+### Examples
+
+**Input:**
+```
+Harshith Vankela
+2009
+```
+**Output:**
+```
+Hello, Harshith Vankela! You are 16 years old. Your name has 16 characters.
 ```
 
 ---
 
-## Chapter 5 — Functions & Return Statements
-*"Write once. Call forever."*
-
-**Q15.** Write four separate functions — `add`, `subtract`, `multiply`, `divide` — each taking two `double`s and returning a `double`. Build a menu-driven calculator that calls the right function based on user choice.
-
+**Input:**
 ```
-Expected output:
-1. Add   2. Subtract   3. Multiply   4. Divide
-Choice: 3
-Enter two numbers: 6 7
-Result: 42.00
+Ada Lovelace
+1815
+```
+**Output:**
+```
+Hello, Ada Lovelace! You are 210 years old. Your name has 12 characters.
 ```
 
-**Q16.** Write a function `isPrime(int n)` that returns `true` if `n` is prime, `false` otherwise. Use it to print all primes up to 100, five per line.
+### Notes
 
+Use string formatting (f-strings are your best friend). `len()` counts every character including spaces. The age is simply `2025 - birth_year`.
+
+---
+<br>
+
+## Problem 3 — The Number Alchemist
+
+| | |
+|---|---|
+| **Difficulty** | ⭐ `900` |
+| **Time Limit** | 1 second |
+| **Memory Limit** | 256 MB |
+| **Topics** | `Working With Numbers` · `Data Types` |
+
+### Problem Statement
+
+> *"Numbers are not cold things. They breathe, they multiply, they leave remainders —  
+> just like us."*
+
+The Alchemist deals in six **fundamental transformations** of two numbers `a` and `b`.  
+Given `a` and `b`, output the following six values on separate lines:
+
+1. `a + b` — the **Sum**
+2. `a - b` — the **Difference**
+3. `a * b` — the **Product**
+4. `a // b` — the **Integer Quotient**
+5. `a % b` — the **Remainder**
+6. `a ** b` — the **Power**
+
+### Input
+
+Two integers `a` and `b` on a single line, space-separated.
+
+$$1 \leq b \leq a \leq 100$$
+
+### Output
+
+Six integers, each on a separate line, in the order above.
+
+### Examples
+
+**Input:**
 ```
-Expected output:
- 2   3   5   7  11
-13  17  19  23  29
-...
+7 3
 ```
-
-**Q17.** Write a function `reverse(int n)` that returns the digit-reversal of a number (e.g. `1234 → 4321`). Then write `isPalindrome(int n)` that uses `reverse()` to check if a number reads the same forwards and backwards.
-
+**Output:**
 ```
-Expected output:
-Enter number: 12321
-Reversed    : 12321
-Palindrome  : YES
-
-Enter number: 1234
-Reversed    : 4321
-Palindrome  : NO
-```
-
-**Q18.** Write a recursive function `fibonacci(int n)` that returns the nth Fibonacci number. Print the first 15 Fibonacci numbers using a for loop that calls this function.
-
-```
-Expected output:
-1 1 2 3 5 8 13 21 34 55 89 144 233 377 610
+10
+4
+21
+2
+1
+343
 ```
 
 ---
 
-## Chapter 6 — Arrays
-*"Many values. One name. Total control."*
-
-**Q19.** Ask the user to enter 10 integers into an array. Without using any built-in sort or min/max functions, find and print the maximum, minimum, sum, and average.
-
+**Input:**
 ```
-Expected output:
-Enter 10 numbers: 4 7 2 9 1 5 8 3 6 10
-Max     : 10
-Min     : 1
-Sum     : 55
-Average : 5.50
+10 2
 ```
-
-**Q20.** Store 8 numbers in an array. Write your own bubble sort to sort them in ascending order. Print the array before and after sorting.
-
+**Output:**
 ```
-Expected output:
-Before: 64 34 25 12 22 11 90 45
-After : 11 12 22 25 34 45 64 90
+12
+8
+20
+5
+0
+100
 ```
 
-**Q21.** Ask the user for an array of `n` integers and a target number. Implement linear search — print the index if found, or `"Not found"` if not. Then count how many times the target appears.
+---
+<br>
 
+---
+
+# 🥈 TIER II — SILVER: The Awakening
+
+> *"You have learned to speak.  
+> Now learn to ask questions,  
+> and to listen to the answers the machine gives back."*
+
+---
+
+## Problem 4 — The String Sculptor
+
+| | |
+|---|---|
+| **Difficulty** | ⭐⭐ `1000` |
+| **Time Limit** | 1 second |
+| **Memory Limit** | 256 MB |
+| **Topics** | `Strings` · `Data Types` · `If Statements` |
+
+### Problem Statement
+
+A string arrives at your workshop. You are a sculptor. You must reveal its **six hidden faces**:
+
+1. Its **length**
+2. Itself in **UPPERCASE**
+3. Itself in **lowercase**
+4. Itself **reversed**
+5. The **count of vowels** (`a, e, i, o, u` — case-insensitive)
+6. Whether it is a **palindrome** (`True` or `False`)
+
+### Input
+
+A single string `s` — no spaces, only alphabetic characters.
+
+$$1 \leq |s| \leq 100$$
+
+### Output
+
+Six lines corresponding to the six transformations.
+
+### Examples
+
+**Input:**
 ```
-Expected output:
-Array  : 3 7 2 7 9 7 4
-Target : 7
-First found at index: 1
-Appears 3 time(s).
+racecar
+```
+**Output:**
+```
+7
+RACECAR
+racecar
+racecar
+3
+True
 ```
 
 ---
 
-## Chapter 7 — Strings
-*"Characters in sequence. Meaning in context."*
-
-**Q22.** Ask the user for a sentence. Count the number of vowels, consonants, spaces, and digits in it. Print each count on its own line.
-
+**Input:**
 ```
-Expected output:
-Enter sentence: Hello World 123
-Vowels     : 3
-Consonants : 7
-Spaces     : 2
-Digits     : 3
+Harshith
 ```
-
-**Q23.** Ask the user for a word. Check if it is a palindrome by comparing characters from both ends moving inward. Do not use any built-in reverse function.
-
+**Output:**
 ```
-Expected output:
-Enter word: racecar
-racecar is a palindrome.
-
-Enter word: hello
-hello is NOT a palindrome.
+8
+HARSHITH
+harshith
+htihsraH
+2
+False
 ```
 
-**Q24.** Ask the user for a string. Build and print a new string that contains only the characters at even indices (0, 2, 4...). Then print only the characters at odd indices. Concatenate both and print the final combined string.
+### Notes
+
+A **palindrome** reads the same forward and backward (case-insensitive check recommended). Use string slicing `s[::-1]` for reversal. Count vowels using a loop or `sum()`.
+
+---
+<br>
+
+## Problem 5 — The Mad Poet
+
+| | |
+|---|---|
+| **Difficulty** | ⭐⭐ `1050` |
+| **Time Limit** | 1 second |
+| **Memory Limit** | 256 MB |
+| **Topics** | `User Input` · `Variables` · `Strings` · `Mad Libs` |
+
+### Problem Statement
+
+> *"Every great story is just a template waiting for the right words."*
+
+The Mad Poet has a story template — but it's missing six crucial words.  
+Take the following inputs and fill in the blanks:
 
 ```
-Expected output:
-Input    : Harshith
-Even idx : Hrsh
-Odd idx  : ait
-Combined : Hrshaiti
+The [ADJECTIVE] [NOUN] decided to [VERB] all the way to [PLACE].
+It took [NUMBER] whole hours, and everyone in the crowd felt utterly [EMOTION].
+The legend would be told for [NUMBER] * 10 years to come.
+```
+
+Note: The last line's number is computed — it equals `NUMBER × 10`.
+
+### Input
+
+Six lines in this order:
+1. `noun`
+2. `verb`
+3. `adjective`
+4. `place`
+5. `number` (integer)
+6. `emotion`
+
+### Output
+
+The completed story — exactly 3 lines.
+
+### Examples
+
+**Input:**
+```
+robot
+sprint
+ancient
+Moon
+42
+confused
+```
+**Output:**
+```
+The ancient robot decided to sprint all the way to Moon.
+It took 42 whole hours, and everyone in the crowd felt utterly confused.
+The legend would be told for 420 years to come.
+```
+
+---
+<br>
+
+## Problem 6 — The Arithmetic Oracle
+
+| | |
+|---|---|
+| **Difficulty** | ⭐⭐ `1100` |
+| **Time Limit** | 1 second |
+| **Memory Limit** | 256 MB |
+| **Topics** | `Calculator` · `User Input` · `If Statements` · `Data Types` |
+
+### Problem Statement
+
+> *"Division by zero: the only sin mathematics never forgives."*
+
+Build a **calculator** that accepts two numbers and one of seven operators.  
+The supported operators are: `+`, `-`, `*`, `/`, `//`, `%`, `**`
+
+- For `/`, output a **float** rounded to 2 decimal places.
+- For `//`, `%`, `**` and the others — output an integer where result is whole; otherwise 2dp float.
+- If the operator is `/`, `//`, or `%` and the second number is `0`, output `Error: Division by zero`.
+
+### Input
+
+Three lines:
+- Line 1: First number `a` (float)
+- Line 2: Operator (one of the 7 above)
+- Line 3: Second number `b` (float)
+
+### Output
+
+The result, or an error message.
+
+### Examples
+
+**Input:**
+```
+15
+/
+4
+```
+**Output:**
+```
+3.75
 ```
 
 ---
 
-## Chapter 8 — 2D Arrays & Nested Loops
-*"The grid is where real programs live."*
-
-**Q25.** Fill a 5×5 2D array with values 1–25 row by row. Print it as a neatly formatted grid. Then print the sum of each row and each column separately.
-
+**Input:**
 ```
-Expected output:
- 1  2  3  4  5   | Row sum: 15
- 6  7  8  9 10   | Row sum: 40
-11 12 13 14 15   | Row sum: 65
-16 17 18 19 20   | Row sum: 90
-21 22 23 24 25   | Row sum: 115
-Col sums: 55 60 65 70 75
+9
+/
+0
 ```
-
-**Q26.** Create a 4×4 matrix using user input. Write a function `transpose(int m[][4], int n)` that swaps rows and columns and prints the transposed matrix.
-
+**Output:**
 ```
-Expected output:
-Original:          Transposed:
-1  2  3  4         1  5  9  13
-5  6  7  8         2  6  10 14
-9  10 11 12        3  7  11 15
-13 14 15 16        4  8  12 16
-```
-
-**Q27.** Create a 5×5 2D array filled with values of your choice (1–9). Without using any diagonal-specific shortcut, find and print the sum of the main diagonal (top-left to bottom-right) and the anti-diagonal (top-right to bottom-left).
-
-```
-Expected output:
-Grid:
-3 1 4 1 5
-9 2 6 5 3
-5 8 9 7 9
-3 2 3 8 4
-6 2 6 4 3
-Main diagonal sum  : 25
-Anti diagonal sum  : 28
+Error: Division by zero
 ```
 
 ---
 
-## Chapter 9 — Exponents & Math Functions
-*"When arithmetic alone is not enough."*
-
-**Q28.** Write your own power function `myPow(long long base, int exp)` without using `pow()`. Handle negative exponents by returning 0 (integer domain only). Test it with at least 5 cases including edge cases.
-
+**Input:**
 ```
-Expected output:
-myPow(2, 10)   = 1024
-myPow(-3, 3)   = -27
-myPow(5, 0)    = 1
-myPow(7, 1)    = 7
-myPow(2, -1)   = 0
+2
+**
+10
+```
+**Output:**
+```
+1024
 ```
 
-**Q29.** Ask the user for a number `n`. Print a table of `n`, `n²`, `n³`, and the integer square root of `n` (floor) for all values from 1 to `n`. Right-align all columns.
+---
+<br>
 
-```
-Expected output:
-n    n^2    n^3   sqrt(n)
-1      1      1        1
-2      4      8        1
-3      9     27        1
-4     16     64        2
-5     25    125        2
-```
+---
 
-**Q30.** Compute compound interest. Ask for principal `P`, annual rate `R` (as a percentage), number of times compounded per year `n`, and years `t`. Use the formula `A = P * (1 + R/100n)^(n*t)` using your own `myPow` function for integer exponents.
+# 🥇 TIER III — GOLD: Where Logic Blooms
 
+> *"To control the flow of a program  
+> is to conduct an orchestra of ones and zeros —  
+> and you are the maestro."*
+
+---
+
+## Problem 7 — The Verdict Machine
+
+| | |
+|---|---|
+| **Difficulty** | ⭐⭐⭐ `1300` |
+| **Time Limit** | 1 second |
+| **Memory Limit** | 256 MB |
+| **Topics** | `If Statements` · `User Input` · `Functions` · `Loops` |
+
+### Problem Statement
+
+A student sits across from the Verdict Machine, trembling with five subject scores.  
+The Machine must compute and declare, without mercy or favor:
+
+1. **Average** — rounded to 2 decimal places
+2. **Grade** — based on average: `A` (≥90), `B` (≥80), `C` (≥70), `D` (≥60), `F` (<60)
+3. **Status** — `Passed` if ALL scores ≥ 40, else `Failed`
+4. **Rank** — `Distinction` (avg ≥ 90), `Merit` (avg ≥ 75), `Pass` (avg ≥ 40), `Fail` otherwise
+
+### Input
+
+Five integers on separate lines, each between `0` and `100`.
+
+### Output
+
+Four lines: average, grade, status, rank.
+
+### Examples
+
+**Input:**
 ```
-Expected output:
-Principal  : 10000
-Rate (%)   : 8
-Times/year : 4
-Years      : 5
-Final amount: 14859.47
+88
+92
+76
+85
+90
+```
+**Output:**
+```
+86.20
+B
+Passed
+Merit
 ```
 
 ---
 
-## BOSS LEVEL — The Student Olympiad Tracker
-*"Every concept. One program. No hints."*
-
-> **Style:** LeetCode + Story-based + Plain practice — all three.
-
-You are building an Olympiad result tracker. The program handles `n` students across 4 subjects. Your program must run through 7 phases. All scoring logic must live in **separate functions**.
-
-### Constraints
-- `2 ≤ n ≤ 6` students
-- 4 subjects: Math, Physics, Chemistry, CS
-- Scores: 0–100 per subject
-
----
-
-### Phase 1 — Input
-Ask the user for `n`. Then ask for each student's name and their 4 subject scores. Store names in a `string` array and scores in a 2D `int` array of size `n×4`.
-
----
-
-### Phase 2 — Grade Assignment
-Write a function `getGrade(int score)` that uses a `switch` or `if/else` chain to return a `char` grade:
-- 90+ → `'A'`
-- 80–89 → `'B'`
-- 70–79 → `'C'`
-- 60–69 → `'D'`
-- below 60 → `'F'`
-
-Apply it to every score in the 2D array and store results in a 2D `char` array of the same size.
-
----
-
-### Phase 3 — Per-Student Report
-Write a function `studentAverage(int scores[], int n)` that returns the average score of a student across all subjects. For each student, print their name, all 4 scores with grades, and their average.
-
+**Input:**
 ```
-Expected format:
-Alice | Math:95(A)  Phy:88(B)  Chem:76(C)  CS:99(A)  | Avg: 89.50
+95
+98
+91
+93
+97
+```
+**Output:**
+```
+94.80
+A
+Passed
+Distinction
 ```
 
 ---
 
-### Phase 4 — Leaderboard
-Sort students by their overall average in descending order using bubble sort on their averages array. Print the ranked leaderboard with rank number, name, and average.
-
+**Input:**
 ```
-Expected format:
-Rank 1: Alice | 89.50
-Rank 2: Bob   | 85.25
-...
+35
+72
+68
+80
+55
+```
+**Output:**
+```
+62.00
+D
+Failed
+Fail
+```
+
+### Notes
+
+Be careful: **Status** depends on whether any single score is below 40 — even if the average looks fine. Logic first, then math.
+
+---
+<br>
+
+## Problem 8 — The Season Sage
+
+| | |
+|---|---|
+| **Difficulty** | ⭐⭐⭐ `1350` |
+| **Time Limit** | 1 second |
+| **Memory Limit** | 256 MB |
+| **Topics** | `Switch/Match Statements` · `If Statements` |
+
+### Problem Statement
+
+> *"The world turns, the seasons change —  
+> and the Sage knows exactly where in the circle you stand."*
+
+Given a **month number** (1–12), the Season Sage must reveal:
+
+1. The **month name** (e.g., `July`)
+2. The **season** (Northern Hemisphere):
+   - `Winter`: December, January, February
+   - `Spring`: March, April, May
+   - `Summer`: June, July, August
+   - `Autumn`: September, October, November
+3. The **number of days** in that month *(assume non-leap year)*
+
+### Input
+
+A single integer `m` where `1 ≤ m ≤ 12`.
+
+### Output
+
+Three lines: month name, season, days in month.
+
+### Examples
+
+**Input:**
+```
+7
+```
+**Output:**
+```
+July
+Summer
+31
 ```
 
 ---
 
-### Phase 5 — Subject Analysis
-For each of the 4 subjects, find and print the highest score, lowest score, and subject average. Also print the name of the student who topped that subject.
+**Input:**
+```
+2
+```
+**Output:**
+```
+February
+Winter
+28
+```
+
+### Notes
+
+Use Python's `match` statement (Python 3.10+) — this is exactly the problem it was born for. February always has 28 days here (non-leap year assumption).
+
+---
+<br>
+
+## Problem 9 — The List Architect
+
+| | |
+|---|---|
+| **Difficulty** | ⭐⭐⭐ `1450` |
+| **Time Limit** | 1 second |
+| **Memory Limit** | 256 MB |
+| **Topics** | `Arrays/Lists` · `For Loops` · `Functions` |
+
+### Problem Statement
+
+> *"A list unsorted is a library unread —  
+> potential, paralyzed."*
+
+Given a list of `n` integers, reveal its full structure:
+
+1. The list **sorted ascending**
+2. The list **sorted descending**
+3. **Maximum** and **minimum** values (space-separated)
+4. **Sum** and **average** (average rounded to 2 decimal places, space-separated)
+5. The **second largest** unique element
+6. All elements at **even indices** (0-indexed) as a list
+
+### Input
+
+- Line 1: integer `n`
+- Line 2: `n` space-separated integers
+
+$$2 \leq n \leq 1000 \quad \text{and} \quad -10^6 \leq \text{each element} \leq 10^6$$
+
+### Output
+
+Six lines as described.
+
+### Examples
+
+**Input:**
+```
+6
+4 1 7 2 9 3
+```
+**Output:**
+```
+[1, 2, 3, 4, 7, 9]
+[9, 7, 4, 3, 2, 1]
+9 1
+26 4.33
+7
+[4, 7, 9]
+```
+
+### Notes
+
+For the **second largest**, consider only unique values. Even-indexed elements: index 0, 2, 4, ...
+
+---
+<br>
+
+## Problem 10 — The Function Forge
+
+| | |
+|---|---|
+| **Difficulty** | ⭐⭐⭐ `1500` |
+| **Time Limit** | 2 seconds |
+| **Memory Limit** | 256 MB |
+| **Topics** | `Functions` · `Return Statement` · `If Statements` · `While Loops` |
+
+### Problem Statement
+
+> *"A function is a promise —  
+> give me input, I will return truth."*
+
+Implement the following **four mathematical functions**:
+
+| Function | Description |
+|----------|-------------|
+| `is_prime(n)` | Returns `True` if `n` is prime, `False` otherwise |
+| `fibonacci(n)` | Returns the `n`-th Fibonacci number (0-indexed: F(0)=0, F(1)=1) |
+| `factorial(n)` | Returns `n!` |
+| `gcd(a, b)` | Returns the Greatest Common Divisor of `a` and `b` |
+
+Given `q` queries, answer each.
+
+### Input
+
+- Line 1: integer `q`
+- Next `q` lines: each starts with a function name followed by 1 or 2 arguments
 
 ```
-Expected format:
-Math    | High: 95 (Alice) | Low: 52 (Bob) | Avg: 74.33
-Physics | High: 91 (Carol) | Low: 48 (Dan) | Avg: 71.00
-...
+is_prime <n>
+fibonacci <n>
+factorial <n>
+gcd <a> <b>
 ```
+
+$$1 \leq q \leq 50 \quad|\quad 0 \leq n \leq 20 \quad|\quad 1 \leq a, b \leq 10^4$$
+
+### Output
+
+`q` lines — one result per query.
+
+### Examples
+
+**Input:**
+```
+5
+is_prime 17
+fibonacci 10
+factorial 6
+gcd 48 18
+is_prime 4
+```
+**Output:**
+```
+True
+55
+720
+6
+False
+```
+
+### Notes
+
+Do **not** import any math modules — implement everything from scratch. Use loops, not recursion (recursion is for Tier IV).
+
+---
+<br>
 
 ---
 
-### Phase 6 — Power Score & Medal String
-Compute each student's Power Score using your custom `myPow` function:
+# 💎 TIER IV — PLATINUM: The Crucible
 
-```
-Power = (number of A grades)^2 + (number of B grades)
-```
-
-Build and print a **medal string** for each student — concatenate their grade chars across all subjects (e.g. `"ABCA"`). Print a Power Score leaderboard.
-
-```
-Expected format:
-Alice | Medals: ABCA | Power Score: 5
-Bob   | Medals: BBAB | Power Score: 4
-...
-```
+> *"You have learned the alphabet of the machine.  
+> Now write poetry in its language —  
+> loops within loops, arrays within arrays,  
+> logic folded into logic like an origami of pure thought."*
 
 ---
 
-### Phase 7 — Oracle Interrogation
-Print the overall topper's name. Then run a guessing game using a `while` loop: ask the user to guess this topper's average (rounded to nearest integer). Give `"Too low"` / `"Too high"` hints. Count attempts. When correct, print the final verdict:
+## Problem 11 — The Loop Labyrinth
 
+| | |
+|---|---|
+| **Difficulty** | ⭐⭐⭐⭐ `1650` |
+| **Time Limit** | 2 seconds |
+| **Memory Limit** | 256 MB |
+| **Topics** | `While Loops` · `For Loops` · `If Statements` · `Functions` |
+
+### Problem Statement
+
+You enter the **Loop Labyrinth**. Three chambers await.
+
+**Chamber 1:** Print all **prime numbers up to `n`**, space-separated.
+
+**Chamber 2:** Print **FizzBuzz** for 1 to `n`:
+- Print `FizzBuzz` if divisible by both 3 and 5
+- Print `Fizz` if divisible by 3 only
+- Print `Buzz` if divisible by 5 only
+- Otherwise, print the number
+
+**Chamber 3:** Compute `n²` and print the **sum of its digits**.
+
+### Input
+
+A single integer `n`.
+
+$$2 \leq n \leq 100$$
+
+### Output
+
+Three lines (Chamber 1 result, Chamber 2 result, Chamber 3 result).
+
+### Examples
+
+**Input:**
 ```
-"After [ATTEMPTS] attempt(s), the seeker discovered that [NAME]
-reigned supreme with an average of [AVG], earning [MEDAL_STRING]
-and a Power Score of [POWER] in the [N]-student olympiad."
+20
 ```
+**Output:**
+```
+2 3 5 7 11 13 17 19
+1 2 Fizz 4 Buzz Fizz 7 8 Fizz Buzz 11 Fizz 13 14 FizzBuzz 16 17 Fizz 19 Buzz
+4
+```
+
+*(Note: 20² = 400, digit sum = 4 + 0 + 0 = 4)*
 
 ---
+<br>
+
+## Problem 12 — Power Without Mercy
+
+| | |
+|---|---|
+| **Difficulty** | ⭐⭐⭐⭐ `1750` |
+| **Time Limit** | 2 seconds |
+| **Memory Limit** | 256 MB |
+| **Topics** | `Exponent Function` · `For Loops` · `Functions` · `While Loops` |
+
+### Problem Statement
+
+> *"You want power? Then build it yourself, brick by brick —  
+> no shortcuts, no `**`, no `pow()`."*
+
+Three sub-problems, all using loops and functions — **no `**` operator or `pow()` allowed**:
+
+**Part A:** Compute `a^b` using a loop.
+
+**Part B:** Compute **compound interest**:
+$$A = P \times \left(1 + \frac{r}{100}\right)^t$$
+where `P` = principal, `r` = annual rate (%), `t` = time in years. Output rounded to 2 decimal places.
+
+**Part C:** Find the **smallest power of 2** that is ≥ `n`.
+
+### Input
+
+Three lines:
+- Line 1: `a b` (integers for Part A)
+- Line 2: `P r t` (floats for Part B)
+- Line 3: `n` (integer for Part C)
+
+$$1 \leq a, b \leq 15 \quad|\quad 1 \leq P \leq 10^6 \quad|\quad 1 \leq r \leq 50 \quad|\quad 1 \leq t \leq 30 \quad|\quad 1 \leq n \leq 10^6$$
+
+### Output
+
+Three lines: result of A, result of B, result of C.
+
+### Examples
+
+**Input:**
+```
+3 5
+1000 10 3
+100
+```
+**Output:**
+```
+243
+1331.00
+128
+```
+
+### Notes
+
+For Part C, start with `1` and keep doubling until you reach or exceed `n`. That's it. No logarithms needed.
+
+---
+<br>
+
+## Problem 13 — The Grid Whisperer
+
+| | |
+|---|---|
+| **Difficulty** | ⭐⭐⭐⭐ `1900` |
+| **Time Limit** | 2 seconds |
+| **Memory Limit** | 256 MB |
+| **Topics** | `2D Arrays` · `Nested Loops` · `Functions` |
+
+### Problem Statement
+
+> *"The matrix does not lie.  
+> Read its diagonals, transpose its truths,  
+> and find the saddle points where tension rests."*
+
+Given an `n × n` matrix, perform the following operations in order:
+
+1. **Print the matrix** (space-separated rows)
+2. **Print its transpose**
+3. Print the **sum of the primary diagonal** (top-left to bottom-right)
+4. Print the **sum of the secondary diagonal** (top-right to bottom-left)
+5. Print the **index and values** of the row with the maximum sum (0-indexed)
+6. Print all **saddle points**: an element is a saddle point if it is the **minimum in its row** AND the **maximum in its column**. Print each as `(row, col): value`. If none exist, print `None`.
+
+Separate each section with `---`.
+
+### Input
+
+- Line 1: integer `n`
+- Next `n` lines: `n` space-separated integers each
+
+$$2 \leq n \leq 10$$
+
+All values fit in a standard integer.
+
+### Output
+
+Six sections separated by `---`.
+
+### Examples
+
+**Input:**
+```
+3
+1 2 3
+4 5 6
+7 8 9
+```
+**Output:**
+```
+1 2 3
+4 5 6
+7 8 9
+---
+1 4 7
+2 5 8
+3 6 9
+---
+15
+---
+15
+---
+Row 2: [7, 8, 9]
+---
+(2, 0): 7
+```
+
+### Notes
+
+For the saddle point: element `M[i][j]` is a saddle point if `M[i][j] == min(row i)` AND `M[i][j] == max(column j)`. In the example, `7` is the min of row 2 `[7,8,9]` — **wait, no** — `7` is actually the minimum of row 2. And `7` is also the maximum of column 0 `[1,4,7]`. So it qualifies. Both diagonals in the 3×3 example sum to `1+5+9=15` and `3+5+7=15`.
+
+---
+<br>
+
+## Problem 14 — Mind Reader
+
+| | |
+|---|---|
+| **Difficulty** | ⭐⭐⭐⭐ `1950` |
+| **Time Limit** | 2 seconds |
+| **Memory Limit** | 256 MB |
+| **Topics** | `Guessing Game` · `While Loops` · `If Statements` · `Functions` |
+
+### Problem Statement
+
+> *"The machine thinks of a number.  
+> You ask. It answers. You guess again.  
+> Until silence becomes certainty."*
+
+Simulate a **number guessing game** where the secret number is computed as:
+
+$$\text{secret} = ((\text{seed} \times 1103515245 + 12345) \% 2^{31}) \% \text{high} + \text{low}$$
+
+This is a simple **linear congruential generator** — no `random` imports needed.
+
+Given `seed`, `low`, `high`, and a sequence of guesses, simulate the game:
+- For each guess, output `Too low!`, `Too high!`, or `Correct! Found in X guesses.`
+- Stop processing guesses once `Correct!` is output.
+- If all guesses are exhausted without finding it, output `Game over! The number was [secret].`
+
+Also output the **minimum number of guesses** theoretically needed (using binary search strategy): `⌈log₂(high - low + 1)⌉`.
+
+### Input
+
+- Line 1: `seed low high` (integers)
+- Line 2: `q` — number of guesses
+- Next `q` lines: each is a guess (integer)
+
+$$0 \leq \text{seed} \leq 10^9 \quad|\quad 1 \leq \text{low} \leq \text{high} \leq 10^6 \quad|\quad 1 \leq q \leq 30$$
+
+### Output
+
+Lines for each guess until correct/game over, then the theoretical minimum.
+
+### Examples
+
+**Input:**
+```
+42 1 100
+5
+50
+25
+37
+43
+38
+```
+*(Secret = (42×1103515245+12345) % 2147483648 % 100 + 1 = some number — compute to verify)*
+
+**Output will vary based on secret.** For grading purposes, implement the formula and trust the output.
+
+**Minimum guesses:** For range 1–100, `⌈log₂(100)⌉ = 7`.
+
+```
+Minimum guesses needed (binary search): 7
+```
+
+### Notes
+
+The theoretical minimum is `math.ceil(math.log2(high - low + 1))` — but implement the ceiling yourself using a while loop: keep doubling from 1 until `2^k ≥ range_size`.
+
+---
+<br>
+
+---
+
+# 🔴 BOSS LEVEL — THE ARCHITECT'S TRIAL
+
+> *"You have walked the Bronze path and the Silver road.  
+> You have crossed the Gold threshold and survived the Platinum forge.  
+> Now — you build something real.*
+>
+> *Not a solution. A system.*
+>
+> *Not a function. A world."*
+
+---
+
+## Problem 15 — The Student Codex
+
+| | |
+|---|---|
+| **Difficulty** | ⭐⭐⭐⭐⭐ `2400` |
+| **Time Limit** | 5 seconds |
+| **Memory Limit** | 256 MB |
+| **Topics** | `EVERYTHING` |
+
+### Problem Statement
+
+You are tasked with building a **Student Records Management System** — a command-line application that processes a series of commands and maintains a student database.
+
+Each student has:
+- A **name** (unique, single word)
+- **5 subject scores** (integers, 0–100)
+
+The system supports the following commands:
+
+| Command | Description |
+|---------|-------------|
+| `ADD <name> <s1> <s2> <s3> <s4> <s5>` | Add student with 5 scores |
+| `REPORT <name>` | Print average, grade, pass/fail status, rank |
+| `LEADERBOARD` | Print all students sorted by average (descending) |
+| `TOPN <n>` | Print top `n` students by average |
+| `CLASSAVG` | Print average of all students' averages (2dp) |
+| `GRADECOUNT` | Print count of students per grade (A/B/C/D/F) |
+| `FINDGRADE <grade>` | List students who achieved the given grade |
+| `PRIMES <name>` | List which of the student's scores are prime |
+| `PATTERN <n>` | Print a diamond of `*` with middle width `2n-1` |
+| `EXIT` | Terminate processing |
+
+**Grade thresholds** (based on average): A ≥ 90, B ≥ 80, C ≥ 70, D ≥ 60, F < 60  
+**Rank:** Distinction (≥90), Merit (≥75), Pass (≥40), Fail (<40)  
+**Pass condition:** ALL scores ≥ 40
+
+If `ADD` is called with an existing name, **update** the student's scores.  
+If any command references a non-existent student, print `Student not found.`
+
+### Input
+
+A series of commands (at most 200), one per line, terminated by `EXIT`.
+
+### Output
+
+Output corresponding to each command (except `ADD` and `EXIT` which produce no output).
+
+### Example
+
+**Input:**
+```
+ADD Alice 88 92 76 85 90
+ADD Bob 55 60 48 70 65
+ADD Carol 95 98 91 93 97
+ADD Dave 35 72 68 80 55
+REPORT Alice
+LEADERBOARD
+CLASSAVG
+GRADECOUNT
+PRIMES Alice
+FINDGRADE B
+PATTERN 3
+TOPN 2
+EXIT
+```
+
+**Output:**
+```
+Name: Alice | Average: 86.20 | Grade: B | Status: Passed | Rank: Merit
+---
+1. Carol  | Avg: 94.80 | Grade: A
+2. Alice  | Avg: 86.20 | Grade: B
+3. Bob    | Avg: 59.60 | Grade: F
+4. Dave   | Avg: 62.00 | Grade: D
+---
+Class Average: 75.65
+---
+A: 1
+B: 1
+C: 0
+D: 1
+F: 1
+---
+Alice's prime scores: [none]
+---
+Students with grade B: Alice
+---
+  *
+ ***
+*****
+ ***
+  *
+---
+Top 2 Students:
+1. Carol  | Avg: 94.80 | Grade: A
+2. Alice  | Avg: 86.20 | Grade: B
+```
+
+### Notes
+
+- Scores like 88, 92, 76, 85, 90 — none are prime. Note: `2` is the only even prime.
+- The diamond for `PATTERN 3` has rows: 1, 3, 5, 3, 1 stars, centered.
+- Bob's average: (55+60+48+70+65)/5 = 59.6 → Grade F (since <60... wait, 59.6 < 60, so F). Status: Passed (all ≥ 40). Rank: Pass.
+- Dave's average: (35+72+68+80+55)/5 = 62.0 → Grade D. Status: Failed (35 < 40). Rank: Fail.
+- This is your **capstone**. Write clean, modular code with functions. Use 2D arrays (list of lists) to store the student matrix. Use every construct you've learned.
+
+---
+
+### Grading Rubric (Self-Assessment)
+
+| Criteria | Points |
+|----------|--------|
+| All basic commands work correctly | 40 |
+| Edge cases handled (student not found, duplicate ADD) | 15 |
+| Code uses functions with return statements | 15 |
+| No repeated logic (DRY principle) | 10 |
+| Diamond pattern is correct for all `n` | 10 |
+| PRIMES correctly identifies prime scores | 10 |
+| **Total** | **100** |
+
+---
+
+## 🏁 The Path You Have Walked
+
+```
+Bronze  → Variables, Strings, Numbers, Output
+Silver  → User Input, Mad Libs, Calculator, String Ops
+Gold    → If Statements, Switch/Match, Lists, Functions
+Platinum → While/For Loops, Exponents, 2D Arrays, Nested Loops
+Boss    → Everything. All at once. Like a real project.
+```
+
+> *"The journey of a thousand functions begins with a single `print`.*
+>
+> *You began. You struggled. You debugged.*
+>
+> *And somewhere between a syntax error and a working output,*
+> *you became a programmer."*
+
+---
+
+*Built for the coding-practice repository. Push your solutions. Commit your growth.*  
+*The only rule: no looking at solutions before you try.*
+
+---
+
+**Good luck, Architect. The cursor blinks and waits for you.** ⚡
